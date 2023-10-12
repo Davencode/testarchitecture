@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testarchitecture/utils/constants.dart';
 
 class ProfileScreen extends StatelessWidget {
 
@@ -8,7 +9,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pagina Profilo'),
+        title: const Text(AppStrings.profile),
       ),
       body: Center(
         child: Text('Questa è la pagina del profilo.'),
