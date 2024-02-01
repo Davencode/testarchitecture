@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testarchitecture/screens/splash_screen.dart';
 import 'screens/blankScreen.dart';
 import 'screens/profileScreen.dart';
 import 'screens/listScreen.dart';
@@ -6,7 +7,6 @@ import 'screens/listScreen.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   const MyApp({super.key});
 
   @override
@@ -16,13 +16,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
 
 class HomeScreen extends StatefulWidget {
-
   const HomeScreen({super.key});
 
   @override
