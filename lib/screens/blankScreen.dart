@@ -8,25 +8,40 @@ class BlankScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SplashScreen(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: FloatingActionButton(
-          backgroundColor: Colors.white,
-          foregroundColor: Color(0xFF0E5D6B),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18),
-          ),
-          onPressed: () {},
-          hoverColor: Colors.grey,
-          child: const Icon(Icons.menu),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            FloatingActionButton(
+              backgroundColor: Colors.white,
+              foregroundColor: Color(0xFF0E5D6B),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(22),
+              ),
+              onPressed: () {},
+              hoverColor: Colors.grey,
+              child: const Icon(Icons.menu),
+            ),
+            FloatingActionButton.extended(
+              backgroundColor: Colors.white,
+              foregroundColor: Color(0xFF0E5D6B),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(22),
+              ),
+              onPressed: () {},
+              hoverColor: Colors.grey,
+              label: Text('Percorso'),
+            ),
+          ],
         ),
       ),
       /*appBar: AppBar(
         title: Text('Pagina Blank'),
       ),*/
       body: Center(
-        child: Text('Questa è una pagina vuota.'),
+        child: Text('Qui deve andare la mappa.'),
       ),
     );
   }
