@@ -8,11 +8,12 @@ class BlankScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SplashScreen(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 30, left: 8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             FloatingActionButton(
               backgroundColor: Colors.white,
@@ -24,6 +25,7 @@ class BlankScreen extends StatelessWidget {
               hoverColor: Colors.grey,
               child: const Icon(Icons.menu),
             ),
+            SizedBox(height: 16), // Aggiungi spazio tra i due FABs
             FloatingActionButton.extended(
               backgroundColor: Colors.white,
               foregroundColor: Color(0xFF0E5D6B),
@@ -37,12 +39,10 @@ class BlankScreen extends StatelessWidget {
           ],
         ),
       ),
-      /*appBar: AppBar(
-        title: Text('Pagina Blank'),
-      ),*/
       body: Center(
         child: Text('Qui deve andare la mappa.'),
       ),
     );
   }
+
 }
