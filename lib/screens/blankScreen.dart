@@ -13,7 +13,8 @@ class BlankScreen extends StatelessWidget {
       floatingActionButton: Builder(
         builder: (BuildContext context) {
           return Padding(
-            padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 30, left: 8),
+            padding: EdgeInsets.only(
+                top: MediaQuery.of(context).padding.top + 100, left: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +31,6 @@ class BlankScreen extends StatelessWidget {
                   hoverColor: Colors.grey,
                   child: const Icon(Icons.menu),
                 ),
-                SizedBox(height: 16),
                 FloatingActionButton.extended(
                   backgroundColor: Colors.white,
                   foregroundColor: Color(0xFF0E5D6B),
@@ -48,17 +48,13 @@ class BlankScreen extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.zero,
           children: <Widget>[
             SizedBox(
               height: 70,
               child: DrawerHeader(
                 child: Text(
                   'Esplora ora',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18
-                  ),
+                  style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
               ),
             ),
