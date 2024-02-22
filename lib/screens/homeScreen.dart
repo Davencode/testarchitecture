@@ -3,17 +3,19 @@ import 'listScreen.dart';
 import 'profileScreen.dart';
 import 'blankScreen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => BlankScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/list': (context) => ListScreen(),
+        '/': (context) => const BlankScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/list': (context) => const ListScreen(),
       },
     );
   }
