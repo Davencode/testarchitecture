@@ -11,6 +11,16 @@ buildscript {
     }
 }
 
+android {
+    defaultConfig {
+        applicationId "com.example.testarchitecture"
+        minSdk 21
+        targetSdk flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+}
+
 allprojects {
     repositories {
         google()
