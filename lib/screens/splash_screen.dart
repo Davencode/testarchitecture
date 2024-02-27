@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testarchitecture/main.dart';
-import 'package:testarchitecture/screens/blankScreen.dart';
+import 'package:testarchitecture/screens/MapView.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (_) => const BlankScreen(),
+          builder: (_) => const MapView(),
         ),
       );
     });

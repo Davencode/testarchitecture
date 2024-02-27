@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:testarchitecture/screens/profileScreen.dart';
 import 'locations.dart' as locations;
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class MapView extends StatefulWidget {
+  const MapView({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<MapView> createState() => _MapViewState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _MapViewState extends State<MapView> {
   final Map<String, Marker> _markers = {};
-
   Future<void> _onMapCreated(GoogleMapController controller) async {
     final googleOffices = await locations.getGoogleOffices();
     setState(() {
@@ -33,60 +33,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          GoogleMap(
-              onMapCreated: _onMapCreated,
-              initialCameraPosition: const CameraPosition(
-                target: LatLng(0, 0),
-                zoom: 2,
-              ),
-              markers: _markers.values.toSet(),
-              myLocationButtonEnabled: false),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Builder(builder: (context) {
-                      return FloatingActionButton(
-                        backgroundColor: Colors.white,
-                        foregroundColor: Color(0xFF0E5D6B),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(22),
-                        ),
-                        onPressed: () {
-                          Scaffold.of(context).openDrawer(); // Apri il Drawer
-                        },
-                        hoverColor: Colors.grey,
-                        child: const Icon(Icons.menu),
-                      );
-                    }),
-                  ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: FloatingActionButton.extended(
-                        backgroundColor: Colors.white,
-                        foregroundColor: Color(0xFF0E5D6B),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(22),
-                        ),
-                        onPressed: () {},
-                        hoverColor: Colors.grey,
-                        label: Text('Giro 7 Chiese'),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -162,6 +108,61 @@ class _ProfileScreenState extends State<ProfileScreen> {
             // Aggiungi altri ListTile per altri elementi del menu
           ],
         ),
+      ),
+      body: Stack(
+        children: [
+          GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: const CameraPosition(
+                target: LatLng(0, 0),
+                zoom: 2,
+              ),
+              markers: _markers.values.toSet(),
+              myLocationButtonEnabled: false),
+          SafeArea(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Builder(builder: (context) {
+                      return FloatingActionButton(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Color(0xFF0E5D6B),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(22),
+                        ),
+                        onPressed: () {
+                          Scaffold.of(context).openDrawer(); // Apri il Drawer
+                        },
+                        hoverColor: Colors.grey,
+                        child: const Icon(Icons.menu),
+                      );
+                    }),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: FloatingActionButton.extended(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Color(0xFF0E5D6B),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(22),
+                        ),
+                        onPressed: () {},
+                        hoverColor: Colors.grey,
+                        label: Text('Giro 7 Chiese'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

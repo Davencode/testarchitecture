@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'listScreen.dart';
 import 'profileScreen.dart';
-import 'blankScreen.dart';
+import 'MapView.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => const BlankScreen(),
+        '/': (context) => const MapView(),
         '/profile': (context) => const ProfileScreen(),
         '/list': (context) => const ListScreen(),
       },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testarchitecture/screens/splash_screen.dart';
-import 'screens/blankScreen.dart';
+import 'screens/MapView.dart';
 import 'screens/profileScreen.dart';
 import 'screens/listScreen.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -49,5 +49,4 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
-
 }
