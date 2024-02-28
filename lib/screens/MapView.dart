@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:testarchitecture/screens/Settings.dart';
 import 'package:testarchitecture/screens/profileScreen.dart';
+import 'package:testarchitecture/theme/colors.dart';
 import 'locations.dart' as locations;
 
 class MapView extends StatefulWidget {
@@ -101,8 +103,12 @@ class _MapViewState extends State<MapView> {
             ListTile(
               title: const Text('Impostazioni'),
               onTap: () {
-                // Aggiungi qui la logica per la navigazione alle impostazioni
-                Navigator.pop(context); // Chiudi il Drawer
+                // Aggiungi qui la logica per la navigazione alla home
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (_) => const SettingsView(),
+                  ),
+                ); // Chiudi il Drawer
               },
             )
             // Aggiungi altri ListTile per altri elementi del menu
@@ -122,7 +128,7 @@ class _MapViewState extends State<MapView> {
           SafeArea(
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -306,7 +312,8 @@ class _ExpandableFabState extends State<ExpandableFab>
               padding: const EdgeInsets.all(8),
               child: Icon(
                 Icons.close,
-                color: Theme.of(context).primaryColor,
+                color: AppColors.primaryColor,
+                size: 32,
               ),
             ),
           ),
@@ -340,16 +347,15 @@ class ActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Material(
       shape: const CircleBorder(),
       clipBehavior: Clip.antiAlias,
-      color: theme.colorScheme.secondary,
+      color: Colors.white,
       elevation: 4,
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.onSecondary,
+        color: const Color(0xFF0E5D6B),
       ),
     );
   }

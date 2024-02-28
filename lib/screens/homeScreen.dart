@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
+/*port 'package:flutter/material.dart';
+import 'package:testarchitecture/screens/Settings.dart';
 import 'listScreen.dart';
 import 'profileScreen.dart';
 import 'MapView.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() => runApp(const MyApp());
 
@@ -19,4 +21,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-}
+}*/

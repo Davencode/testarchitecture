@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:testarchitecture/screens/splash_screen.dart';
-import 'screens/MapView.dart';
 import 'screens/profileScreen.dart';
 import 'screens/listScreen.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'screens/locations.dart' as locations;
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatefulWidget {
@@ -40,12 +43,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/list': (context) => const ListScreen(),
+      },
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.green[700],
-      ),
-      home: Scaffold(
-        body: SplashScreen(),
       ),
     );
   }

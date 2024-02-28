@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:testarchitecture/main.dart';
 import 'package:testarchitecture/screens/MapView.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 1, milliseconds: 50), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (_) => const MapView(),
@@ -42,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen>
         decoration: const BoxDecoration(color: Colors.white),
         child: Image.asset(
           'images/logo.png',
-          scale: 1.2,
+          scale: 3.8,
         ),
       ),
     );
