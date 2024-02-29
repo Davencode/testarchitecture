@@ -4,13 +4,9 @@ import 'screens/profileScreen.dart';
 import 'screens/listScreen.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'screens/locations.dart' as locations;
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
-  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatefulWidget {

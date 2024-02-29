@@ -38,17 +38,6 @@ dependencies:
   google_maps_flutter: ^2.3.0
   http: ^1.1.0
   json_serializable: ^6.7.1
-  flutter_native_splash: ^2.3.7
-
-flutter_native_splash:
-  color: "#ffffff"
-  image: images/logo.png
-
-  android_12:
-    image: images/logo.png
-    icon_background_color: "#ffffff"
-    image_dark: images/logo.png
-    color: "#191919"
 
 dev_dependencies:
   flutter_test:
